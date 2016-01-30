@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class InventoryItem : MonoBehaviour
 {
+    private static Dictionary<int, Vector3> _itemWorkPositions
+        = new Dictionary<int, Vector3>();
+
     [SerializeField]
     private int _id;
 
@@ -20,6 +23,26 @@ public class InventoryItem : MonoBehaviour
         OnWorld,
         InInventory,
         AtRitualSite
+    }
+
+    public void Start()
+    {
+        Vector3 position;
+        if(_itemWorkPositions.TryGetValue(ID, out position))
+        {
+            Debug.Log("Loading Item");
+            transform.position = position;
+        }
+        else
+        {
+            Debug.Log("Adding Item");
+            _itemWorkPositions.Add(ID, transform.position);
+        }
+    }
+
+    public void OnDestroy()
+    {
+        _itemWorkPositions[ID] = transform.position;
     }
 
     void OnCollisionEnter2D(Collision2D col)

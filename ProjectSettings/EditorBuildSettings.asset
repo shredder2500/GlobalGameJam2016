@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Tests/DarkLevel.unity
   - enabled: 1
     path: Assets/Scenes/Tests/LightLevel.unity
+  - enabled: 1
+    path: Assets/Scenes/Tests/Timer.unity
