@@ -3,15 +3,10 @@ using System.Collections;
 
 public class InventoryItem : MonoBehaviour
 {
-    public InventoryItem()
-    {
-    }
-
-
+    
     [SerializeField]
     private int _id;
-
-
+    
     public int ID { get { return _id; } set { _id = value; } }
 
     public LocationEnum Location
@@ -25,14 +20,6 @@ public class InventoryItem : MonoBehaviour
         OnWorld,
         InInventory,
         AtRitualSite
-    }
-
-    private void Start()
-    {
-    }
-
-    private void Update()
-    {
     }
 
     public void CollectFromWorld()
