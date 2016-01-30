@@ -22,16 +22,24 @@ public class InventoryItem : MonoBehaviour
         AtRitualSite
     }
 
-    void OnCollisionEnter(Collision col)
+    void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "player")
+        Debug.Log("Item " + ID + " hit by object w/ tag " + gameObject.tag);
+
+        if (gameObject.tag == "Player")
         {
             Inventory.CollectFromWorldByID(ID);
+            this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         }
     }
 
     public void PlaceAtRitual()
     {
         Inventory.PlaceAtRitualByID(ID);
+    }
+
+    public void DropItem()
+    {
+        Inventory.DropItemByID(ID);
     }
 }

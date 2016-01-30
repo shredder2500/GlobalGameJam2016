@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21254578}
   - 114: {fileID: 11488034}
   m_Layer: 0
-  m_Name: Test_Dark1Sprite
+  m_Name: test_Dark1Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
