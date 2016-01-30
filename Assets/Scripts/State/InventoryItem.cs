@@ -3,9 +3,23 @@ using System.Collections;
 
 public class InventoryItem : MonoBehaviour
 {
-    public int ID { get; set; }
+    public InventoryItem()
+    {
+        Location = LocationEnum.OnWorld;
+    }
 
-    public LocationEnum Location { get; set; }
+
+    [SerializeField]
+    private int _id;
+
+
+    public int ID { get { return _id; } set {_id = value } }
+
+    public LocationEnum Location
+    {
+        get { return Inventory.GetLocationByID(_id); }
+        set { Inventory.SetLocationByID(_id, value); }
+    }
 
     public enum LocationEnum
     {
@@ -19,19 +33,16 @@ public class InventoryItem : MonoBehaviour
     }
 
     private void Update()
-    {        
+    {
     }
 
     public void CollectFromWorld()
     {
-        Location = LocationEnum.OnWorld;
+        Inventory.CollectFromWorldByID(ID);
     }
 
     public void PlaceAtRitual()
     {
-        if (Location == LocationEnum.InInventory)
-        {
-            Location = LocationEnum.OnWorld;
-        }
+        Inventory.PlaceAtRitualByID(ID);
     }
 }
