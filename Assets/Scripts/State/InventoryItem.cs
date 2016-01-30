@@ -3,11 +3,6 @@ using System.Collections;
 
 public class InventoryItem : MonoBehaviour
 {
-    public InventoryItem()
-    {
-    }
-
-
     [SerializeField]
     private int _id;
 
@@ -27,20 +22,12 @@ public class InventoryItem : MonoBehaviour
         AtRitualSite
     }
 
-    private void Start()
+    void OnCollisionEnter(Collision col)
     {
-    }
-
-    private void Update()
-    {
-    }
-
-    /// <summary>
-    /// Call this On Player collide
-    /// </summary>
-    public void CollectFromWorld()
-    {
-        Inventory.CollectFromWorldByID(ID);
+        if (col.gameObject.tag == "player")
+        {
+            Inventory.CollectFromWorldByID(ID);
+        }
     }
 
     public void PlaceAtRitual()
