@@ -47,9 +47,9 @@ public class InventoryItem : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log("Item " + ID + " hit by object w/ tag " + gameObject.tag);
+        Debug.Log("Item " + ID + " hit by object w/ tag " + col.gameObject.tag);
 
-        if (gameObject.tag == "Player")
+        if (col.gameObject.tag == "Player")
         {
             Inventory.CollectFromWorldByID(ID);
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
