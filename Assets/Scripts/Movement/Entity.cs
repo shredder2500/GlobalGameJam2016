@@ -13,6 +13,7 @@ namespace GGJ.Movement
         private readonly IEntityController _controller;
 
         public Entity(IEntityController controller)
+            : base()
         {
             _controller = controller;
         }
@@ -25,6 +26,11 @@ namespace GGJ.Movement
         private void SetVelocity(Vector2 velocity)
         {
             _rigidbody.velocity = velocity * _speed;
+        }
+
+        private void Update()
+        {
+            _controller.Update();
         }
 
         private void FixedUpdate()

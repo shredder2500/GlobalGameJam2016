@@ -2,9 +2,8 @@
 {
     public class PlayerEntity : Entity
     {
-        private void FixedUpdate()
-        {
-
-        }
+        public PlayerEntity()
+            : base(new PlayerController())
+        { }
     }
 }
