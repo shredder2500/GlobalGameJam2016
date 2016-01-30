@@ -6,7 +6,7 @@ namespace GGJ.Movement
     [ExecuteInEditMode]
     [RequireComponent(typeof(Rigidbody2D), typeof(SpriteRenderer),
         typeof(Collider2D))]
-    public abstract class Entity : MonoBehaviour
+    public abstract class BaseMovement : MonoBehaviour
     {
         [SerializeField]
         private float _speed;
@@ -25,7 +25,7 @@ namespace GGJ.Movement
 
         private readonly IEntityController _controller;
 
-        public Entity(IEntityController controller)
+        public BaseMovement(IEntityController controller)
             : base()
         {
             _controller = controller;

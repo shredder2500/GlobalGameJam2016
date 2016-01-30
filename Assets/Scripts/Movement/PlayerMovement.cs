@@ -1,6 +1,6 @@
 ﻿namespace GGJ.Movement
 {
-    public class PlayerEntity : Entity
+    public class PlayerEntity : BaseMovement
     {
         public PlayerEntity()
             : base(new PlayerController())
