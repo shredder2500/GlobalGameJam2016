@@ -10,14 +10,26 @@ namespace GGJ.Movement
         private float _speed;
         private Rigidbody2D _rigidbody;
 
+        private readonly IEntityController _controller;
+
+        public Entity(IEntityController controller)
+        {
+            _controller = controller;
+        }
+
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
         }
 
-        protected void SetVelocity(Vector2 velocity)
+        private void SetVelocity(Vector2 velocity)
         {
             _rigidbody.velocity = velocity * _speed;
+        }
+
+        private void FixedUpdate()
+        {
+            SetVelocity(Vector2.right * _controller.GetMovementAxis());
         }
     }
 }

@@ -1,6 +1,10 @@
 ﻿namespace GGJ.Movement
 {
-    public class PlayerEntity
+    public class PlayerEntity : Entity
     {
+        private void FixedUpdate()
+        {
+
+        }
     }
 }
