@@ -35,6 +35,9 @@ public class InventoryItem : MonoBehaviour
     {
     }
 
+    /// <summary>
+    /// Call this On Player collide
+    /// </summary>
     public void CollectFromWorld()
     {
         Inventory.CollectFromWorldByID(ID);
