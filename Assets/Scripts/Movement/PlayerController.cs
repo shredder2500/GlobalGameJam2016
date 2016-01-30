@@ -15,18 +15,38 @@ namespace GGJ.Movement
             return _horizontalAxis;
         }
 
-        public void Update(){
-          _horizontalAxis = Input.GetAxis("Horizontal");
-          if (Input.GetAxis("Vertical") >= 0.1f){
-            if(Jump != null){
-                Jump();
+        public void GetHorizontalAxis()
+        {
+            _horizontalAxis = Input.GetAxis("Horizontal");
+        }
+
+        private void GetJumpAction()
+        {
+            if (Input.GetAxis("Vertical") >= 0.1f)
+            {
+                if (Jump != null)
+                {
+                    Jump();
+                }
             }
-          }
-          if(Input.GetKey(KeyCode.Space)){
-            if(Attack != null){
-                Attack();
+        }
+
+        private void GetAttackAction()
+        {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                if (Attack != null)
+                {
+                    Attack();
+                }
             }
-          }
+        }
+
+        public void Update()
+        {
+            GetHorizontalAxis();
+            GetJumpAction();
+            GetAttackAction();
         }
 
     }
