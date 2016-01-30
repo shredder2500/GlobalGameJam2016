@@ -41,7 +41,7 @@ namespace GGJ.Movement
 
         private void SetVelocity(Vector2 velocity)
         {
-            _rigidbody.velocity = new Vector2(velocity.x,
+            _rigidbody.velocity = new Vector2(velocity.x * _speed,
                 _rigidbody.velocity.y + velocity.y);
             _rigidbody.velocity.Set(velocity.x, _rigidbody.velocity.y + velocity.y);
         }
@@ -49,6 +49,18 @@ namespace GGJ.Movement
         private void Update()
         {
             _controller.Update();
+        }
+
+        private IEnumerator CheckJumpFinished()
+        {
+            yield return new WaitForEndOfFrame();
+
+            while(!CheckIfGrounded())
+            {
+                yield return new WaitForEndOfFrame();
+            }
+            
+            StartCoroutine(JumpTimer());
         }
 
         private void FixedUpdate()
@@ -63,7 +75,7 @@ namespace GGJ.Movement
             {
                 _canJump = false;
                 _rigidbody.AddForce(Vector2.up * _jumpForce);
-                StartCoroutine(JumpTimer());
+                StartCoroutine(CheckJumpFinished());
             }
         }
 
