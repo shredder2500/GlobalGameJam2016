@@ -3,7 +3,7 @@ using System.Collections;
 
 public static class Ritual
 {
-    public bool HasLightSideItems
+    public static bool HasLightSideItems
     {
         get
         {
@@ -18,7 +18,7 @@ public static class Ritual
         }
     }
 
-    public bool HasDarkSideItems
+    public static bool HasDarkSideItems
     {
         get
         {
@@ -33,7 +33,7 @@ public static class Ritual
         }
     }
 
-    public bool HasAllItems
+    public static bool HasAllItems
     {
         get
         {
