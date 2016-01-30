@@ -9,11 +9,11 @@ public static class Ritual
         {
             return
                   (
-                    Inventory.Light1.Location == InventoryItem.LocationEnum.AtRitualSite
+                    Inventory.GetLocationByID(0) == InventoryItem.LocationEnum.AtRitualSite
                     &&
-                    Inventory.Light2.Location == InventoryItem.LocationEnum.AtRitualSite
+                    Inventory.GetLocationByID(1) == InventoryItem.LocationEnum.AtRitualSite
                     &&
-                    Inventory.Light3.Location == InventoryItem.LocationEnum.AtRitualSite
+                    Inventory.GetLocationByID(2) == InventoryItem.LocationEnum.AtRitualSite
                   );
         }
     }
@@ -24,11 +24,11 @@ public static class Ritual
         {
             return
                   (
-                    Inventory.Dark1.Location == InventoryItem.LocationEnum.AtRitualSite
+                    Inventory.GetLocationByID(3) == InventoryItem.LocationEnum.AtRitualSite
                     &&
-                    Inventory.Dark1.Location == InventoryItem.LocationEnum.AtRitualSite
+                    Inventory.GetLocationByID(4) == InventoryItem.LocationEnum.AtRitualSite
                     &&
-                    Inventory.Dark1.Location == InventoryItem.LocationEnum.AtRitualSite
+                    Inventory.GetLocationByID(5) == InventoryItem.LocationEnum.AtRitualSite
                   );
         }
     }

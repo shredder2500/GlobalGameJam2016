@@ -5,7 +5,6 @@ public class InventoryItem : MonoBehaviour
 {
     public InventoryItem()
     {
-        Location = LocationEnum.OnWorld;
     }
 
 
@@ -13,7 +12,7 @@ public class InventoryItem : MonoBehaviour
     private int _id;
 
 
-    public int ID { get { return _id; } set {_id = value } }
+    public int ID { get { return _id; } set { _id = value; } }
 
     public LocationEnum Location
     {
