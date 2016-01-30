@@ -3,10 +3,10 @@ using System.Collections;
 
 public class InventoryItem : MonoBehaviour
 {
-    
     [SerializeField]
     private int _id;
-    
+
+
     public int ID { get { return _id; } set { _id = value; } }
 
     public LocationEnum Location
@@ -22,9 +22,12 @@ public class InventoryItem : MonoBehaviour
         AtRitualSite
     }
 
-    public void CollectFromWorld()
+    void OnCollisionEnter(Collision col)
     {
-        Inventory.CollectFromWorldByID(ID);
+        if (col.gameObject.tag == "player")
+        {
+            Inventory.CollectFromWorldByID(ID);
+        }
     }
 
     public void PlaceAtRitual()
