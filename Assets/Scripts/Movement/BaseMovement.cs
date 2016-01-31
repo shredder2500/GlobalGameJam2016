@@ -1,14 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 namespace GGJ.Movement
 {
-    [ExecuteInEditMode]
+    // TODO(After GameJam): Refactor - Doing to much, should follow single responsablity
     [RequireComponent(typeof(Rigidbody2D), typeof(SpriteRenderer),
         typeof(Collider2D))]
     [RequireComponent(typeof(Animator))]
     public abstract class BaseMovement : MonoBehaviour
     {
+        [SerializeField]
+        private float _attackRange;
+        [SerializeField]
+        private LayerMask _attackMask;
         [SerializeField]
         private float _speed;
         [SerializeField]
@@ -28,6 +33,8 @@ namespace GGJ.Movement
         private bool _canJump = true;
 
         private readonly IEntityController _controller;
+        protected Action _onDamage;
+        protected Action _onDoDamage;
 
         public BaseMovement(IEntityController controller)
             : base()
@@ -41,7 +48,27 @@ namespace GGJ.Movement
             _renderer = GetComponent<SpriteRenderer>();
             _animator = GetComponent<Animator>();
 
-            _controller.Jump += Jump;
+            _controller.Jump += OnJump;
+            _controller.Attack += OnAttack;
+
+            OnStart();
+        }
+
+        protected virtual void OnStart() { }
+
+        private void OnAttack()
+        {
+            var hit = Physics2D.Raycast(transform.position, Vector2.right, _attackRange, _attackMask);
+            
+            if(hit.collider)
+            {
+                var movement = hit.collider.GetComponent<BaseMovement>();
+                if(movement)
+                {
+                    // TODO (post Game Jam): Refactor, kinda smelly 
+                    movement._onDamage();
+                }
+            }
         }
 
         private void SetVelocity(Vector2 velocity)
@@ -56,11 +83,11 @@ namespace GGJ.Movement
             _controller.Update();
 
             var scale = transform.localScale;
-            if(_rigidbody.velocity.x > 0)
+            if(_rigidbody.velocity.x > .1)
             {
                 scale.x = 1;
             }
-            else if(_rigidbody.velocity.x < 0)
+            else if(_rigidbody.velocity.x < -.1)
             {
                 scale.x = -1;
             }
@@ -87,7 +114,7 @@ namespace GGJ.Movement
             _animator.SetBool("IsGrounded", CheckIfGrounded());
         }
 
-        private void Jump()
+        private void OnJump()
         {
             if (CheckIfGrounded()
                 && _canJump)
@@ -156,6 +183,7 @@ namespace GGJ.Movement
 
         private void OnDrawGizmos()
         {
+            Gizmos.DrawLine(transform.position, transform.position + Vector3.right * _attackRange);
             Gizmos.DrawWireCube(GetGroundCheckCenter(), GetGroundCheckSize());
         }
     }

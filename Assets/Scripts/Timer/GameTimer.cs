@@ -19,13 +19,33 @@ namespace GGJ.Timer
 
         private void Update()
         {
-            _currentTime += Time.deltaTime;
+            LoseTime(Time.deltaTime);
 
             TimeUpdated.Invoke(1 - (_currentTime / _time));
 
             if(_currentTime >= _time)
             {
                 Elapsed.Invoke();
+            }
+        }
+
+        internal void GainTime(float doDamageTimeGain)
+        {
+            _currentTime -= doDamageTimeGain;
+            
+            if(_currentTime < 0)
+            {
+                _currentTime = 0;
+            }
+        }
+
+        internal void LoseTime(float damageTimeLose)
+        {
+            _currentTime += damageTimeLose;
+
+            if(_currentTime > _time)
+            {
+                _currentTime = _time;
             }
         }
     }

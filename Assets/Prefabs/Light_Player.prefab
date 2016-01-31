@@ -44,7 +44,7 @@ GameObject:
   - 58: {fileID: 5837744}
   - 95: {fileID: 9550502}
   m_Layer: 0
-  m_Name: Test_Player
+  m_Name: Light_Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
