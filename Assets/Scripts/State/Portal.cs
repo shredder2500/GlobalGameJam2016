@@ -2,60 +2,60 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class Portal : MonoBehaviour {
-
-    //private bool playerTouchingPortal = false;
-
-    //public GameObject Player;
-    
-    void Update()
+namespace GGJ
+{
+    public class Portal : MonoBehaviour
     {
-        //if (playerTouchingPortal)
-        //{
-        //    // Check the ritual states to determine action.
 
-        //}
-    }
+        //private bool playerTouchingPortal = false;
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Player")
+        //public GameObject Player;
+
+        void Update()
         {
-            //playerTouchingPortal = true;
+            //if (playerTouchingPortal)
+            //{
+            //    // Check the ritual states to determine action.
 
-            // Check the ritual states to determine action.
-            Debug.Log("Player entered portal!");
-            portalCheck();
+            //}
         }
-    }
 
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.tag == "Player")
+        void OnTriggerEnter2D(Collider2D other)
         {
-            //playerTouchingPortal = false;
+            if (other.tag == "Player")
+            {
+                //playerTouchingPortal = true;
 
-            // Check the ritual states to determine action.
-            Debug.Log("Player left portal!");
+                // Check the ritual states to determine action.
+                Debug.Log("Player entered portal!");
+                portalCheck();
+            }
         }
-    }
 
-    private void portalCheck()
-    {
-        if (Ritual.HasAllItems)
+        void OnTriggerExit2D(Collider2D other)
         {
-            // Player won game/level.
+            if (other.tag == "Player")
+            {
+                //playerTouchingPortal = false;
 
+                // Check the ritual states to determine action.
+                Debug.Log("Player left portal!");
+            }
         }
-        else if (SceneManager.GetActiveScene().name == "DarkLevel") // && Ritual.HasDarkSideItems)
+
+        private void portalCheck()
         {
-            // Port player to light level.
-            SceneManager.LoadScene("LightLevel");
-        }
-        else if (SceneManager.GetActiveScene().name == "LightLevel") // && Ritual.HasLightSideItems)
-        {
-            // Port player to dark level.
-            SceneManager.LoadScene("DarkLevel");
+            if (Ritual.HasAllItems)
+            {
+                // Player won game/level.
+
+            }
+            else if ((SceneManager.GetActiveScene().name == "DarkLevel" && Ritual.HasDarkSideItems) || (SceneManager.GetActiveScene().name == "LightLevel" && Ritual.HasLightSideItems))
+            {
+                // Port player to other level.
+                SceneToggle sceneToggle = FindObjectOfType<SceneToggle>();
+                sceneToggle.ToggleScenes();
+            }
         }
     }
 }
