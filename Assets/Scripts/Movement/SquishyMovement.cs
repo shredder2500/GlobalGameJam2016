@@ -26,6 +26,7 @@ namespace GGJ.Movement
             : base(controller)
         {
             _controller = controller;
+            this._onDamage = () => GetComponent<Animator>().SetTrigger("Death");
         }
 
         protected override void OnStart()
