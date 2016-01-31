@@ -26,7 +26,14 @@ namespace GGJ.Movement
         private Transform _groundCheck_BotRight;
         [SerializeField]
         private LayerMask _groundLayers;
+        [SerializeField]
+        private AudioClip _jumpStartSound;
+        [SerializeField]
+        private AudioClip _playerLightAttackSound;
+        [SerializeField]
+        private AudioClip _playerLightWalkSound;
 
+        private AudioSource _playerAudio;
         private Rigidbody2D _rigidbody;
         private Animator _animator;
         private Renderer _renderer;
@@ -47,6 +54,7 @@ namespace GGJ.Movement
             _rigidbody = GetComponent<Rigidbody2D>();
             _renderer = GetComponent<SpriteRenderer>();
             _animator = GetComponent<Animator>();
+            _playerAudio = GetComponent<AudioSource>();
 
             _controller.Jump += OnJump;
             _controller.Attack += OnAttack;
@@ -59,6 +67,7 @@ namespace GGJ.Movement
         private void OnAttack()
         {
             _animator.SetTrigger("Attack");
+            _playerAudio.PlayOneShot(_playerLightAttackSound);
             var hit = Physics2D.Raycast(transform.position, Vector2.right, _attackRange, _attackMask);
 
             if (hit.collider)
@@ -129,7 +138,8 @@ namespace GGJ.Movement
         private IEnumerator StartJump()
         {
             yield return new WaitForSeconds(.2f);
-            
+
+            _playerAudio.PlayOneShot(_jumpStartSound);
             _rigidbody.AddForce(Vector2.up * _jumpForce);
             StartCoroutine(CheckJumpFinished());
         }
