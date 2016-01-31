@@ -8,31 +8,58 @@ public static class Inventory
     static Inventory()
     {
         Items = new Dictionary<int, InventoryItem.LocationEnum>();
-        for (int i = 0; i < 5; i++)
-        {
-            Items.Add(i, InventoryItem.LocationEnum.OnWorld);
-        }
     }
 
     public static Dictionary<int, InventoryItem.LocationEnum> Items { get; set; }
 
     public static InventoryItem.LocationEnum GetLocationByID(int id)
     {
-        return Items[id];
+        InventoryItem.LocationEnum location;
+
+        if(!Items.TryGetValue(id, out location))
+        {
+            location = InventoryItem.LocationEnum.OnWorld;
+            AddNewWorldItemRef(id);
+        }
+
+        return location;
     }
 
     public static void SetLocationByID(int id, InventoryItem.LocationEnum location)
     {
-        Items[id] = location;
+        if (Items.ContainsKey(id))
+        {
+            Items[id] = location;
+        }
+        else
+        {
+            Items.Add(id, location);
+        }
     }
 
     public static void DropItemByID(int id)
     {
-        Items[id] = InventoryItem.LocationEnum.OnWorld;
+        if (Items.ContainsKey(id))
+        {
+            Items[id] = InventoryItem.LocationEnum.OnWorld;
+        }
+        else
+        {
+            AddNewWorldItemRef(id);
+        }
+    }
+
+    private static void AddNewWorldItemRef(int id)
+    {
+        Items.Add(id, InventoryItem.LocationEnum.OnWorld);
     }
 
     public static void CollectFromWorldByID(int id)
     {
+        if(!Items.ContainsKey(id))
+        {
+            AddNewWorldItemRef(id);
+        }
         Items[id] = InventoryItem.LocationEnum.InInventory;
     }
 

@@ -43,6 +43,7 @@ public class InventoryItem : MonoBehaviour
     public void OnDestroy()
     {
         _itemWorkPositions[ID] = transform.position;
+        Inventory.DropItemByID(ID);
     }
 
     void OnCollisionEnter2D(Collision2D col)
