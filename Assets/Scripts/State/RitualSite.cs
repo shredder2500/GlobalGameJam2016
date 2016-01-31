@@ -11,8 +11,11 @@ public class RitualSite : MonoBehaviour
     [SerializeField]
     private bool _isLightSide;
 
-    void OnCollisionEnter2D(Collision2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
+        Debug.Log("Ritual Site hit by object w/ tag " + col.gameObject.tag);
+
+
         if (col.gameObject.tag == "Player")
         {
             int[] keys;
