@@ -30,12 +30,12 @@ public class InventoryItem : MonoBehaviour
         Vector3 position;
         if(_itemWorkPositions.TryGetValue(ID, out position))
         {
-            Debug.Log("Loading Item");
+            Debug.Log("Loading Item " + ID);
             transform.position = position;
         }
         else
         {
-            Debug.Log("Adding Item");
+            Debug.Log("Adding Item " + ID);
             _itemWorkPositions.Add(ID, transform.position);
         }
     }
