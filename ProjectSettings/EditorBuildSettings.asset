@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Tests/DarkLevel.unity
+    path: Assets/Scenes/DarkLevel.unity
   - enabled: 1
-    path: Assets/Scenes/Tests/LightLevel.unity
+    path: Assets/Scenes/LightLevel.unity
   - enabled: 1
     path: Assets/Scenes/Tests/Timer.unity
