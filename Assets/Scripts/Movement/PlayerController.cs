@@ -33,7 +33,7 @@ namespace GGJ.Movement
 
         private void GetAttackAction()
         {
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 if (Attack != null)
                 {

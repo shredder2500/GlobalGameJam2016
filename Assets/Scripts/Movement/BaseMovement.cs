@@ -55,16 +55,16 @@ namespace GGJ.Movement
         }
 
         protected virtual void OnStart() { }
-
+        
         private void OnAttack()
         {
-            _animator.SetBool("Attack", true);
+            _animator.SetTrigger("Attack");
             var hit = Physics2D.Raycast(transform.position, Vector2.right, _attackRange, _attackMask);
-            
-            if(hit.collider)
+
+            if (hit.collider)
             {
                 var movement = hit.collider.GetComponent<BaseMovement>();
-                if(movement)
+                if (movement)
                 {
                     // TODO (post Game Jam): Refactor, kinda smelly 
                     movement._onDamage();
