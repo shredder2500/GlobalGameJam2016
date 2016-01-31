@@ -58,6 +58,7 @@ namespace GGJ.Movement
 
         private void OnAttack()
         {
+            _animator.SetBool("Attack", true);
             var hit = Physics2D.Raycast(transform.position, Vector2.right, _attackRange, _attackMask);
             
             if(hit.collider)
