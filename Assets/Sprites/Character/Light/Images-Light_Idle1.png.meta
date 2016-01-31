@@ -1,0 +1,137 @@
+fileFormatVersion: 2
+guid: 05b2c41a4e08c3b4290d6c80490c5d5b
+timeCreated: 1454211248
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Images-Light_Idle1_0
+    21300002: Images-Light_Idle1_1
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 736, y: 107, z: 848, w: 174}
+  spritePixelsToUnits: 360
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Images-Light_Idle1_0
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 108
+        width: 342
+        height: 793
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 65, y: -347.5}
+        - {x: 51, y: -344.5}
+        - {x: -58, y: -344.5}
+        - {x: -91, y: -201.5}
+        - {x: -13, y: -198.5}
+        - {x: -10, y: -220.5}
+        - {x: -3, y: -233.5}
+        - {x: 21, y: -271.5}
+        - {x: 46, y: -320.5}
+        - {x: 66, y: -346.5}
+        - {x: 68, y: -354.5}
+        - {x: 68, y: -362.5}
+        - {x: 72, y: -367.5}
+        - {x: 136, y: -396.5}
+        - {x: 163, y: -396.5}
+        - {x: 169, y: -392.5}
+        - {x: 169, y: -365.5}
+        - {x: 94, y: -327.5}
+        - {x: 9, y: -216.5}
+        - {x: 125, y: -123.5}
+        - {x: 99, y: 21.5}
+        - {x: 126, y: 44.5}
+        - {x: 80, y: 58.5}
+        - {x: 69, y: 219.5}
+        - {x: 66, y: 252.5}
+        - {x: 94, y: 351.5}
+        - {x: 56, y: 396.5}
+        - {x: -38, y: 396.5}
+        - {x: -109, y: 274.5}
+        - {x: -53, y: 255.5}
+        - {x: -92, y: 217.5}
+        - {x: -97, y: 191.5}
+        - {x: -127, y: 41.5}
+        - {x: -165, y: 26.5}
+        - {x: -165, y: 14.5}
+        - {x: -163, y: 12.5}
+        - {x: -150, y: 8.5}
+        - {x: -163, y: -111.5}
+        - {x: -151, y: -125.5}
+        - {x: -132, y: -133.5}
+        - {x: -104, y: -339.5}
+        - {x: -165, y: -372.5}
+        - {x: -165, y: -381.5}
+        - {x: -161, y: -390.5}
+        - {x: -95, y: -396.5}
+        - {x: 22, y: -396.5}
+        - {x: 64, y: -364.5}
+        - {x: 67, y: -359.5}
+        - {x: 67, y: -353.5}
+    - name: Images-Light_Idle1_1
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 112
+        width: 97
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -48.5, y: 22.5}
+        - {x: -48.5, y: -3.5}
+        - {x: -0.5, y: -22.5}
+        - {x: 46.5, y: -22.5}
+        - {x: 48.5, y: -19.5}
+        - {x: 48.5, y: 12.5}
+        - {x: -10.5, y: 22.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

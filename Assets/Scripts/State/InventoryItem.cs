@@ -30,12 +30,12 @@ public class InventoryItem : MonoBehaviour
         Vector3 position;
         if(_itemWorkPositions.TryGetValue(ID, out position))
         {
-            Debug.Log("Loading Item");
+            Debug.Log("Loading Item " + ID);
             transform.position = position;
         }
         else
         {
-            Debug.Log("Adding Item");
+            Debug.Log("Adding Item " + ID);
             _itemWorkPositions.Add(ID, transform.position);
         }
     }
@@ -43,9 +43,10 @@ public class InventoryItem : MonoBehaviour
     public void OnDestroy()
     {
         _itemWorkPositions[ID] = transform.position;
+        Inventory.DropItemByID(ID);
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         Debug.Log("Item " + ID + " hit by object w/ tag " + col.gameObject.tag);
 
@@ -53,6 +54,7 @@ public class InventoryItem : MonoBehaviour
         {
             Inventory.CollectFromWorldByID(ID);
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            this.gameObject.GetComponent<CircleCollider2D>().enabled = false;
         }
     }
 
