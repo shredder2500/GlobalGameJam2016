@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class InventoryItem : MonoBehaviour
 {
+    private static Dictionary<int, Vector3> _itemWorkPositions
+        = new Dictionary<int, Vector3>();
+
     [SerializeField]
     private int _id;
 
@@ -22,16 +25,44 @@ public class InventoryItem : MonoBehaviour
         AtRitualSite
     }
 
-    void OnCollisionEnter(Collision col)
+    public void Start()
     {
-        if (col.gameObject.tag == "player")
+        Vector3 position;
+        if(_itemWorkPositions.TryGetValue(ID, out position))
+        {
+            Debug.Log("Loading Item");
+            transform.position = position;
+        }
+        else
+        {
+            Debug.Log("Adding Item");
+            _itemWorkPositions.Add(ID, transform.position);
+        }
+    }
+
+    public void OnDestroy()
+    {
+        _itemWorkPositions[ID] = transform.position;
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        Debug.Log("Item " + ID + " hit by object w/ tag " + col.gameObject.tag);
+
+        if (col.gameObject.tag == "Player")
         {
             Inventory.CollectFromWorldByID(ID);
+            this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         }
     }
 
     public void PlaceAtRitual()
     {
         Inventory.PlaceAtRitualByID(ID);
+    }
+
+    public void DropItem()
+    {
+        Inventory.DropItemByID(ID);
     }
 }

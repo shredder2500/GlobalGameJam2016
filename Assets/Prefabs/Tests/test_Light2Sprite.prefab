@@ -10,8 +10,9 @@ GameObject:
   - 4: {fileID: 418568}
   - 212: {fileID: 21200030}
   - 114: {fileID: 11416034}
+  - 58: {fileID: 5820966}
   m_Layer: 0
-  m_Name: Test_Light2Sprite
+  m_Name: test_Light2Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,6 +30,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!58 &5820966
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132492}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.1
 --- !u!114 &11416034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -81,6 +96,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Name
       value: Test_Light2Sprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

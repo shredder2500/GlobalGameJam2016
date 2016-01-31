@@ -26,6 +26,11 @@ public static class Inventory
         Items[id] = location;
     }
 
+    public static void DropItemByID(int id)
+    {
+        Items[id] = InventoryItem.LocationEnum.OnWorld;
+    }
+
     public static void CollectFromWorldByID(int id)
     {
         Items[id] = InventoryItem.LocationEnum.InInventory;

@@ -1,15 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class RitualSite : MonoBehaviour 
 {
     [SerializeField]
+    private string _nextScene;
+
+    [SerializeField]
     private bool _isLightSide;
 
-    void OnCollisionEnter(Collision col)
+    void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "player")
+        if (col.gameObject.tag == "Player")
         {
             int[] keys;
 
@@ -25,6 +29,21 @@ public class RitualSite : MonoBehaviour
             foreach (var ritualItem in keys.Where(key => Inventory.Items[key] == InventoryItem.LocationEnum.InInventory))
             {
                 Inventory.Items[ritualItem] = InventoryItem.LocationEnum.AtRitualSite;
+            }
+
+
+            if(_isLightSide && Ritual.HasLightSideItems)
+            {
+                //TODO: Open ritual portal.
+            }
+            else if (!_isLightSide && Ritual.HasDarkSideItems)
+            {
+                //TODO: Open ritual portal.
+            }
+
+            if (Ritual.HasAllItems)
+            {
+                SceneManager.LoadScene(_nextScene);
             }
         }
     }
