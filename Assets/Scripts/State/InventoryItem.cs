@@ -9,6 +9,7 @@ public class InventoryItem : MonoBehaviour
     [SerializeField]
     private int _id;
 
+    private AudioSource _itemCollectionSound;
 
     public int ID { get { return _id; } set { _id = value; } }
 
@@ -38,6 +39,8 @@ public class InventoryItem : MonoBehaviour
             Debug.Log("Adding Item " + ID);
             _itemWorkPositions.Add(ID, transform.position);
         }
+
+        this._itemCollectionSound = GetComponent<AudioSource>();
     }
 
     public void OnDestroy()
@@ -52,6 +55,7 @@ public class InventoryItem : MonoBehaviour
 
         if (col.gameObject.tag == "Player")
         {
+            _itemCollectionSound.Play();
             Inventory.CollectFromWorldByID(ID);
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             this.gameObject.GetComponent<CircleCollider2D>().enabled = false;
