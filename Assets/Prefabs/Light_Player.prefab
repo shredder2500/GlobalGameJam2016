@@ -147,6 +147,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b679f55197dba645aa08d27c7a65f16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _attackRange: 0
+  _attackMask:
+    serializedVersion: 2
+    m_Bits: 0
   _speed: 6
   _jumpForce: 500
   _jumpAgainTimer: 1
@@ -155,6 +159,8 @@ MonoBehaviour:
   _groundLayers:
     serializedVersion: 2
     m_Bits: 256
+  _damageTimeLose: 0
+  _doDamageTimeGain: 0
 --- !u!212 &21211570
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -181,7 +187,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1887137899
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 05b2c41a4e08c3b4290d6c80490c5d5b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8a9fa5de109c2ba419ba7c27c712f5c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
