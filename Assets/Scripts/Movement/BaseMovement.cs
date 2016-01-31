@@ -83,6 +83,8 @@ namespace GGJ.Movement
         {
             Walk();
             _animator.SetFloat("VelocityX", _rigidbody.velocity.x);
+            _animator.SetFloat("VelocityY", _rigidbody.velocity.y);
+            _animator.SetBool("IsGrounded", CheckIfGrounded());
         }
 
         private void Jump()
@@ -91,9 +93,17 @@ namespace GGJ.Movement
                 && _canJump)
             {
                 _canJump = false;
-                _rigidbody.AddForce(Vector2.up * _jumpForce);
-                StartCoroutine(CheckJumpFinished());
+                _animator.SetBool("Jump", true);
+                StartCoroutine(StartJump());
             }
+        }
+
+        private IEnumerator StartJump()
+        {
+            yield return new WaitForSeconds(.2f);
+            
+            _rigidbody.AddForce(Vector2.up * _jumpForce);
+            StartCoroutine(CheckJumpFinished());
         }
 
         private IEnumerator JumpTimer()
