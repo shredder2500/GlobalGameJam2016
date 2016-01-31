@@ -46,7 +46,7 @@ public class InventoryItem : MonoBehaviour
         Inventory.DropItemByID(ID);
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         Debug.Log("Item " + ID + " hit by object w/ tag " + col.gameObject.tag);
 
@@ -54,6 +54,7 @@ public class InventoryItem : MonoBehaviour
         {
             Inventory.CollectFromWorldByID(ID);
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            this.gameObject.GetComponent<CircleCollider2D>().enabled = false;
         }
     }
 
