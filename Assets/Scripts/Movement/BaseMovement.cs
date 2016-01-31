@@ -6,6 +6,7 @@ namespace GGJ.Movement
     [ExecuteInEditMode]
     [RequireComponent(typeof(Rigidbody2D), typeof(SpriteRenderer),
         typeof(Collider2D))]
+    [RequireComponent(typeof(Animator))]
     public abstract class BaseMovement : MonoBehaviour
     {
         [SerializeField]
@@ -15,11 +16,14 @@ namespace GGJ.Movement
         [SerializeField]
         private float _jumpAgainTimer;
         [SerializeField]
-        private float _groundCheckDistance;
+        private Transform _groundCheck_TopLeft;
+        [SerializeField]
+        private Transform _groundCheck_BotRight;
         [SerializeField]
         private LayerMask _groundLayers;
 
         private Rigidbody2D _rigidbody;
+        private Animator _animator;
         private Renderer _renderer;
         private bool _canJump = true;
 
@@ -35,6 +39,7 @@ namespace GGJ.Movement
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _renderer = GetComponent<SpriteRenderer>();
+            _animator = GetComponent<Animator>();
 
             _controller.Jump += Jump;
         }
@@ -49,6 +54,17 @@ namespace GGJ.Movement
         private void Update()
         {
             _controller.Update();
+
+            var scale = transform.localScale;
+            if(_rigidbody.velocity.x > 0)
+            {
+                scale.x = 1;
+            }
+            else if(_rigidbody.velocity.x < 0)
+            {
+                scale.x = -1;
+            }
+            transform.localScale = scale;
         }
 
         private IEnumerator CheckJumpFinished()
@@ -66,6 +82,7 @@ namespace GGJ.Movement
         private void FixedUpdate()
         {
             Walk();
+            _animator.SetFloat("VelocityX", _rigidbody.velocity.x);
         }
 
         private void Jump()
@@ -98,21 +115,12 @@ namespace GGJ.Movement
 
         private Vector2 GetTopLeftGroundCheck()
         {
-            var pos = transform.position;
-
-            pos.y -= GetExtentsY();
-            pos.x -= GetExtentsX();
-
-            return pos;
+            return _groundCheck_TopLeft.position;
         }
 
         private Vector2 GetBottomRightGroundCheck()
         {
-            var pos = GetTopLeftGroundCheck();
-            pos.x += GetExtentsX() * 2;
-            pos.y += _groundCheckDistance;
-
-            return pos;
+            return _groundCheck_BotRight.position;
         }
 
         private float GetExtentsX()
@@ -122,22 +130,18 @@ namespace GGJ.Movement
 
         private float GetExtentsY()
         {
-            return _renderer.bounds.extents.x;
+            return _renderer.bounds.extents.y;
         }
 
         private Vector3 GetGroundCheckCenter()
         {
-            var position = GetTopLeftGroundCheck();
-            position.x += GetExtentsX();
-            position.y -= _groundCheckDistance/2;
-
-            return position;
+            return (GetTopLeftGroundCheck() + GetBottomRightGroundCheck()) / 2;
         }
 
         private Vector2 GetGroundCheckSize()
         {
-            return new Vector2(GetExtentsX() * 2,
-                _groundCheckDistance);
+            return new Vector2(GetBottomRightGroundCheck().x - GetTopLeftGroundCheck().x,
+                GetBottomRightGroundCheck().y - GetTopLeftGroundCheck().y);
         }
 
         private void OnDrawGizmos()
