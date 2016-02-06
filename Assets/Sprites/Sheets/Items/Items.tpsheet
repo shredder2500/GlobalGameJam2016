@@ -1,0 +1,14 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:a2f7b43c5f1e6146b3595bcd9d55bccb:77f544b11f9dc3dafa3b37a6d3ab9cbe:ff72447e4ee6a52320ae9d7c9baf37a7$
+#
+:format=40000
+:texture=Items.png
+:size=1024x2048
+
+frag_dark;1;1356;579;691;0.5;0.5
+frag_light;1;633;538;721;0.5;0.5

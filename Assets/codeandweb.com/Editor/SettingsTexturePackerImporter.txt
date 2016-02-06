@@ -7,6 +7,7 @@ tpsheetFileNames:
 - Assets/Sprites/Sheets/Levels/Dark/Dark_Platforms.tpsheet
 - Assets/Sprites/Sheets/Levels/Light/LIght_Platforms.tpsheet
 - Assets/Sprites/Sheets/Characters/Squishy.tpsheet
+- Assets/Sprites/Sheets/Items/Items.tpsheet
 textureFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.png
 - Assets/Sprites/Sheets/Characters/Nona_Light.png
@@ -14,8 +15,10 @@ textureFileNames:
 - Assets/Sprites/Sheets/Levels/Dark/Dark_Platforms.png
 - Assets/Sprites/Sheets/Levels/Light/LIght_Platforms.png
 - Assets/Sprites/Sheets/Characters/Squishy.png
+- Assets/Sprites/Sheets/Items/Items.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
 - 
 - 
 - 

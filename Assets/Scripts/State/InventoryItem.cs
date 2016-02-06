@@ -43,12 +43,6 @@ public class InventoryItem : MonoBehaviour
         this._itemCollectionSound = GetComponent<AudioSource>();
     }
 
-    public void OnDestroy()
-    {
-        _itemWorkPositions[ID] = transform.position;
-        Inventory.DropItemByID(ID);
-    }
-
     void OnTriggerEnter2D(Collider2D col)
     {
         Debug.Log("Item " + ID + " hit by object w/ tag " + col.gameObject.tag);
@@ -69,6 +63,11 @@ public class InventoryItem : MonoBehaviour
 
     public void DropItem()
     {
-        Inventory.DropItemByID(ID);
+        if (Inventory.GetLocationByID(_id) == LocationEnum.InInventory)
+        {
+            var player = GameObject.FindGameObjectWithTag("Player");
+            _itemWorkPositions[ID] = player.transform.position;
+            Inventory.DropItemByID(ID);
+        }
     }
 }
