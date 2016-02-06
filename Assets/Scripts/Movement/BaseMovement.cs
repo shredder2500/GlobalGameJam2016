@@ -77,6 +77,7 @@ namespace GGJ.Movement
                 {
                     // TODO (post Game Jam): Refactor, kinda smelly 
                     movement._onDamage();
+                    this._onDoDamage();
                 }
             }
         }

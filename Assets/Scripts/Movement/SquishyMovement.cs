@@ -9,9 +9,7 @@ namespace GGJ.Movement
 {
     public class SquishyMovement : BaseMovement
     {
-
-        [SerializeField]
-        private float _timeGainedOnDeath;
+        
         [SerializeField]
         private Transform _leftTarget;
 
@@ -36,7 +34,6 @@ namespace GGJ.Movement
                     controller.Stop();
                     GetComponent<Animator>().SetTrigger("Death");
                     Destroy(gameObject, 1);
-                    FindObjectOfType<GameTimer>().GainTime(_timeGainedOnDeath);
                     _dead = true;
                 }
             };
