@@ -22,6 +22,7 @@ namespace GGJ
 
         void OnTriggerEnter2D(Collider2D other)
         {
+            Debug.Log("Trigger fired!");
             if (other.tag == "Player")
             {
                 //playerTouchingPortal = true;
@@ -48,7 +49,7 @@ namespace GGJ
             if (Ritual.HasAllItems)
             {
                 // Player won game/level.
-
+                Debug.Log("Player won the game!");
             }
             else if ((SceneManager.GetActiveScene().name == "DarkLevel" && Ritual.HasDarkSideItems) || (SceneManager.GetActiveScene().name == "LightLevel" && Ritual.HasLightSideItems))
             {
