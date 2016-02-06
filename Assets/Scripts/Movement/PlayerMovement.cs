@@ -21,6 +21,8 @@ namespace GGJ.Movement
 
             _onDamage = () => _timer.LoseTime(_damageTimeLose);
             _onDoDamage = () => _timer.GainTime(_doDamageTimeGain);
+
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"));
         }
     }
 }

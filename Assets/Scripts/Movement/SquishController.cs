@@ -16,6 +16,7 @@ namespace GGJ.Movement
         private Transform _currentPos;
         private bool _goLeft;
         private float _input;
+        private bool _stoped = false;
 
         public void SetLeftTarget(float x)
         {
@@ -37,9 +38,18 @@ namespace GGJ.Movement
             return _input;
         }
 
+        public void Stop()
+        {
+            _stoped = true;
+        }
+
         public void Update()
         {
-            if (_goLeft && _currentPos.position.x > _leftX)
+            if(_stoped)
+            {
+                _input = 0;
+            }
+            else if (_goLeft && _currentPos.position.x > _leftX)
             {
                 _input = -1;
             }

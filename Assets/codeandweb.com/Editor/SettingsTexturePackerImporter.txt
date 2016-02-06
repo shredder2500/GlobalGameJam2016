@@ -2,16 +2,22 @@ version: 2
 importPivots: 1
 tpsheetFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.tpsheet
-- Assets/Sprites/Levels/Dark/Dark_Platforms.tpsheet
-- Assets/Sprites/Levels/Light/LIght_Platforms.tpsheet
-- Assets/Sprites/Levels/Light/LIght_Borders.tpsheet
+- Assets/Sprites/Sheets/Characters/Nona_Light.tpsheet
+- Assets/Sprites/Sheets/Levels/Light/LIght_Borders.tpsheet
+- Assets/Sprites/Sheets/Levels/Dark/Dark_Platforms.tpsheet
+- Assets/Sprites/Sheets/Levels/Light/LIght_Platforms.tpsheet
+- Assets/Sprites/Sheets/Characters/Squishy.tpsheet
 textureFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.png
-- Assets/Sprites/Levels/Dark/Dark_Platforms.png
-- Assets/Sprites/Levels/Light/LIght_Platforms.png
-- Assets/Sprites/Levels/Light/LIght_Borders.png
+- Assets/Sprites/Sheets/Characters/Nona_Light.png
+- Assets/Sprites/Sheets/Levels/Light/LIght_Borders.png
+- Assets/Sprites/Sheets/Levels/Dark/Dark_Platforms.png
+- Assets/Sprites/Sheets/Levels/Light/LIght_Platforms.png
+- Assets/Sprites/Sheets/Characters/Squishy.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
+- 
 - 
 - 
 - 

@@ -1,0 +1,54 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:8f842acdceb18d1c787491d2e0609169:b0bf1d7717d3331b7d69d65ae77c892b:6066a513f671a08fd1bdf616cf005655$
+#
+:format=40000
+:texture=Squishy.png
+:size=4096x4096
+
+Images-Light_Enemy_Death1;1;3555;960;540;0.5;0
+Images-Light_Enemy_Death2;1;3555;960;540;0.5;0
+Images-Light_Enemy_Death10;963;3555;960;540;0.5;0
+Images-Light_Enemy_Death9;963;3555;960;540;0.5;0
+Images-Light_Enemy_Death11;1925;3555;960;540;0.5;0
+Images-Light_Enemy_Death12;1925;3555;960;540;0.5;0
+Images-Light_Enemy_Death13;2887;3555;960;540;0.5;0
+Images-Light_Enemy_Death14;2887;3555;960;540;0.5;0
+Images-Light_Enemy_Death15;1;3013;960;540;0.5;0
+Images-Light_Enemy_Death16;1;3013;960;540;0.5;0
+Images-Light_Enemy_Death17;963;3013;960;540;0.5;0
+Images-Light_Enemy_Death18;963;3013;960;540;0.5;0
+Images-Light_Enemy_Death19;1925;3013;960;540;0.5;0
+Images-Light_Enemy_Death20;1925;3013;960;540;0.5;0
+Images-Light_Enemy_Death21;2887;3013;960;540;0.5;0
+Images-Light_Enemy_Death22;2887;3013;960;540;0.5;0
+Images-Light_Enemy_Death23;1;2471;960;540;0.5;0
+Images-Light_Enemy_Death24;1;2471;960;540;0.5;0
+Images-Light_Enemy_Death25;963;2471;960;540;0.5;0
+Images-Light_Enemy_Death26;963;2471;960;540;0.5;0
+Images-Light_Enemy_Death27;1925;2471;960;540;0.5;0
+Images-Light_Enemy_Death28;1925;2471;960;540;0.5;0
+Images-Light_Enemy_Death29;2887;2471;960;540;0.5;0
+Images-Light_Enemy_Death30;2887;2471;960;540;0.5;0
+Images-Light_Enemy_Death3;1;1929;960;540;0.5;0
+Images-Light_Enemy_Death4;1;1929;960;540;0.5;0
+Images-Light_Enemy_Death5;963;1929;960;540;0.5;0
+Images-Light_Enemy_Death6;963;1929;960;540;0.5;0
+Images-Light_Enemy_Death7;1925;1929;960;540;0.5;0
+Images-Light_Enemy_Death8;1925;1929;960;540;0.5;0
+Images-Light_Enemy_Walk1;2887;1929;960;540;0.5;0
+Images-Light_Enemy_Walk2;2887;1929;960;540;0.5;0
+Images-Light_Enemy_Walk10;1;1387;960;540;0.5;0
+Images-Light_Enemy_Walk9;1;1387;960;540;0.5;0
+Images-Light_Enemy_Walk11;963;1387;960;540;0.5;0
+Images-Light_Enemy_Walk12;963;1387;960;540;0.5;0
+Images-Light_Enemy_Walk3;1925;1387;960;540;0.5;0
+Images-Light_Enemy_Walk4;1925;1387;960;540;0.5;0
+Images-Light_Enemy_Walk5;2887;1387;960;540;0.5;0
+Images-Light_Enemy_Walk6;2887;1387;960;540;0.5;0
+Images-Light_Enemy_Walk7;1;845;960;540;0.5;0
+Images-Light_Enemy_Walk8;1;845;960;540;0.5;0

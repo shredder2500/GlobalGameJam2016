@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GGJ.Timer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,8 @@ namespace GGJ.Movement
     public class SquishyMovement : BaseMovement
     {
 
-
+        [SerializeField]
+        private float _timeGainedOnDeath;
         [SerializeField]
         private Transform _leftTarget;
 
@@ -17,6 +19,7 @@ namespace GGJ.Movement
         private Transform _rightTarget;
 
         private SquishController _controller;
+        private bool _dead = false;
 
         public SquishyMovement()
             : this (new SquishController())
@@ -26,7 +29,17 @@ namespace GGJ.Movement
             : base(controller)
         {
             _controller = controller;
-            this._onDamage = () => GetComponent<Animator>().SetTrigger("Death");
+            this._onDamage = () =>
+            {
+                if (!_dead)
+                {
+                    controller.Stop();
+                    GetComponent<Animator>().SetTrigger("Death");
+                    Destroy(gameObject, 1);
+                    FindObjectOfType<GameTimer>().GainTime(_timeGainedOnDeath);
+                    _dead = true;
+                }
+            };
         }
 
         protected override void OnStart()
