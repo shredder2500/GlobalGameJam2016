@@ -1,60 +1,48 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
+using System.Linq;
 
 namespace GGJ
 {
     public class Portal : MonoBehaviour
     {
 
-        //private bool playerTouchingPortal = false;
-
-        //public GameObject Player;
-
-        void Update()
-        {
-            //if (playerTouchingPortal)
-            //{
-            //    // Check the ritual states to determine action.
-
-            //}
-        }
-
-        void OnTriggerEnter2D(Collider2D other)
+        void OnTriggerStay2D(Collider2D other)
         {
             if (other.tag == "Player")
             {
-                //playerTouchingPortal = true;
-
-                // Check the ritual states to determine action.
-                Debug.Log("Player entered portal!");
                 portalCheck();
+                TrySwapLevel();
             }
         }
 
-        void OnTriggerExit2D(Collider2D other)
+        private void TrySwapLevel()
         {
-            if (other.tag == "Player")
+            if (Input.GetKeyDown(KeyCode.Return))
             {
-                //playerTouchingPortal = false;
-
-                // Check the ritual states to determine action.
-                Debug.Log("Player left portal!");
+                FindObjectOfType<SceneToggle>().ToggleScenes();
             }
+        }
+
+        private bool CheckIfHasLevelItems()
+        {
+            return FindObjectsOfType<InventoryItem>()
+                .All(item => Inventory.GetLocationByID(item.ID) == InventoryItem.LocationEnum.AtRitualSite);
+            //return (SceneManager.GetActiveScene().name == "DarkLevel" && Ritual.HasDarkSideItems)
+            //    || (SceneManager.GetActiveScene().name == "LightLevel" && Ritual.HasLightSideItems);
         }
 
         private void portalCheck()
         {
-            if (Ritual.HasAllItems)
+            foreach(var inventoryItem in FindObjectsOfType<InventoryItem>()
+                .Where(item => Inventory.GetLocationByID(item.ID) == InventoryItem.LocationEnum.InInventory))
             {
-                // Player won game/level.
-                Debug.Log("Player won the game!");
+                inventoryItem.PlaceAtRitual();
             }
-            else if ((SceneManager.GetActiveScene().name == "DarkLevel" && Ritual.HasDarkSideItems) || (SceneManager.GetActiveScene().name == "LightLevel" && Ritual.HasLightSideItems))
+
+            if (CheckIfHasLevelItems())
             {
-                // Port player to other level.
-                SceneToggle sceneToggle = FindObjectOfType<SceneToggle>();
-                sceneToggle.ToggleScenes();
+                GetComponent<Animator>().SetBool("OpenPortal", true);
             }
         }
     }

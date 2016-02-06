@@ -1,0 +1,16 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:7e0c595913db8bdfec7027a5c76efc7c:37c016e5abde2949ea226afa90aebdd6:b1348d7e10e59b066cdc25a60aaf98c0$
+#
+:format=40000
+:texture=gateway.png
+:size=4096x4096
+
+gateway;1;2295;1800;1800;0.5;0.5
+gateway_swirl_01;1;493;1800;1800;0.5;0.5
+gateway_swirl_02;1803;2295;1800;1800;0.5;0.5
+gateway_swirl_03;1803;493;1800;1800;0.5;0.5

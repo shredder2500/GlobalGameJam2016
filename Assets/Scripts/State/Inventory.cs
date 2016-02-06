@@ -67,7 +67,7 @@ public static class Inventory
     {
         if (Items[id] == InventoryItem.LocationEnum.InInventory)
         {
-            Items[id] = InventoryItem.LocationEnum.OnWorld;
+            Items[id] = InventoryItem.LocationEnum.AtRitualSite;
         }
     }
 }
