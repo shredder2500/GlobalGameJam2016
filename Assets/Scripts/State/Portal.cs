@@ -32,7 +32,7 @@ namespace GGJ
                 {
                     SceneManager.LoadScene(_endingScene);
                 }
-                else
+                else if(CheckIfHasLevelItems())
                 {
                     FindObjectOfType<SceneToggle>().ToggleScenes();
                 }
