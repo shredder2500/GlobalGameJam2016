@@ -6,6 +6,10 @@ namespace GGJ
 {
     public class Portal : MonoBehaviour
     {
+        private void Start()
+        {
+            portalCheck();
+        }
 
         void OnTriggerStay2D(Collider2D other)
         {

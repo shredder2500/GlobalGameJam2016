@@ -1,0 +1,15 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:e89f87c4a3101e6944fc8418c0b6dd67:0a70ec1f785abce740638378d3f65b40:c8a6a44c2446f30ea4c035106e105a8e$
+#
+:format=40000
+:texture=FoxBat.png
+:size=1024x1024
+
+1unitenemy_dark_dynamic;1;663;360;360;0.5;0.5
+1unitenemy_dark_idle;1;301;360;360;0.5;0.5
+1unitenemy_dark_move;363;663;360;360;0.5;0.5

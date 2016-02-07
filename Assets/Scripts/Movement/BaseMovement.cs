@@ -70,7 +70,7 @@ namespace GGJ.Movement
             _playerAudio.PlayOneShot(_playerLightAttackSound);
             var hit = Physics2D.Raycast(transform.position, Vector2.right, _attackRange, _attackMask);
 
-            if (hit.collider)
+            if (hit.collider && hit.collider.tag != "Dead")
             {
                 var movement = hit.collider.GetComponent<BaseMovement>();
                 if (movement)

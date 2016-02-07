@@ -1,0 +1,24 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:4a522115c44dbdf4bbfcc3c35baf2d21:5708fd81291066a228aa959af08f0c5d:c58bfa2089dcb51be5ed8b26bd8001c5$
+#
+:format=40000
+:texture=Flying_Octopus.png
+:size=1024x4096
+
+Images-Dark_Enemy1;1;3555;960;540;0.5;0
+Images-Dark_Enemy10;1;3013;960;540;0.5;0
+Images-Dark_Enemy11;1;2471;960;540;0.5;0
+Images-Dark_Enemy12;1;1929;960;540;0.5;0
+Images-Dark_Enemy2;1;3555;960;540;0.5;0
+Images-Dark_Enemy3;1;1387;960;540;0.5;0
+Images-Dark_Enemy4;1;1387;960;540;0.5;0
+Images-Dark_Enemy5;1;845;960;540;0.5;0
+Images-Dark_Enemy6;1;845;960;540;0.5;0
+Images-Dark_Enemy7;1;303;960;540;0.5;0
+Images-Dark_Enemy8;1;303;960;540;0.5;0
+Images-Dark_Enemy9;1;3013;960;540;0.5;0

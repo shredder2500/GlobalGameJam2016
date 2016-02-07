@@ -3726,6 +3726,14 @@ Prefab:
       propertyPath: _jumpForce
       value: 600
       objectReference: {fileID: 0}
+    - target: {fileID: 9550502, guid: aec1e139c3167644e878cd43076a3c13, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 8afd477044c62694db06fdfe9bd673b3, type: 2}
+    - target: {fileID: 194612, guid: aec1e139c3167644e878cd43076a3c13, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aec1e139c3167644e878cd43076a3c13, type: 2}
   m_IsPrefabParent: 0
@@ -4144,7 +4152,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11493394, guid: 126d9097a8561754782da3ccb4a8a4d5, type: 2}
       propertyPath: _time
-      value: 12030
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 126d9097a8561754782da3ccb4a8a4d5, type: 2}

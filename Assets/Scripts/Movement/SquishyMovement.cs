@@ -17,7 +17,6 @@ namespace GGJ.Movement
         private Transform _rightTarget;
 
         private SquishController _controller;
-        private bool _dead = false;
 
         public SquishyMovement()
             : this (new SquishController())
@@ -29,13 +28,10 @@ namespace GGJ.Movement
             _controller = controller;
             this._onDamage = () =>
             {
-                if (!_dead)
-                {
-                    controller.Stop();
-                    GetComponent<Animator>().SetTrigger("Death");
-                    Destroy(gameObject, 1);
-                    _dead = true;
-                }
+                controller.Stop();
+                GetComponent<Animator>().SetTrigger("Death");
+                this.tag = "Dead";
+                Destroy(gameObject, 1);
             };
         }
 

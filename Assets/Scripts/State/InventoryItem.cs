@@ -33,6 +33,11 @@ public class InventoryItem : MonoBehaviour
         {
             Debug.Log("Loading Item " + ID);
             transform.position = position;
+            if(Inventory.GetLocationByID(ID) == LocationEnum.AtRitualSite)
+            {
+                this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                this.gameObject.GetComponent<CircleCollider2D>().enabled = false;
+            }
         }
         else
         {

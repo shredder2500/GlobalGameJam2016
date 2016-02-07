@@ -9,6 +9,11 @@ tpsheetFileNames:
 - Assets/Sprites/Sheets/Characters/Squishy.tpsheet
 - Assets/Sprites/Sheets/Items/Items.tpsheet
 - Assets/Sprites/Sheets/gateway.tpsheet
+- Assets/Sprites/Sheets/Levels/Dark/Dark_Boarders.tpsheet
+- Assets/Sprites/Sheets/Gateway_Portal.tpsheet
+- Assets/Sprites/Sheets/Characters/Nona_Dark.tpsheet
+- Assets/Sprites/Sheets/Characters/FoxBat.tpsheet
+- Assets/Sprites/Sheets/Characters/Flying_Octopus.tpsheet
 textureFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.png
 - Assets/Sprites/Sheets/Characters/Nona_Light.png
@@ -18,8 +23,18 @@ textureFileNames:
 - Assets/Sprites/Sheets/Characters/Squishy.png
 - Assets/Sprites/Sheets/Items/Items.png
 - Assets/Sprites/Sheets/gateway.png
+- Assets/Sprites/Sheets/Levels/Dark/Dark_Boarders.png
+- Assets/Sprites/Sheets/Gateway_Portal.png
+- Assets/Sprites/Sheets/Characters/Nona_Dark.png
+- Assets/Sprites/Sheets/Characters/FoxBat.png
+- Assets/Sprites/Sheets/Characters/Flying_Octopus.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
+- 
+- 
+- 
+- 
 - 
 - 
 - 

@@ -6,6 +6,7 @@ namespace GGJ.Movement
     public class PlayerMovement : BaseMovement
     {
         private static Vector3 _position;
+        private static bool _positionIsSet = false;
 
         private GameTimer _timer = null;
         [SerializeField]
@@ -19,6 +20,12 @@ namespace GGJ.Movement
 
         protected override void OnStart()
         {
+            if(!_positionIsSet)
+            {
+                _position = transform.position;
+                _positionIsSet = true;
+            }
+
             transform.position = _position;
             _timer = FindObjectOfType<GameTimer>();
 
