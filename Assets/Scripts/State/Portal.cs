@@ -10,8 +10,20 @@ namespace GGJ
         [SerializeField]
         private string _endingScene;
 
+        private AudioSource _portalHumAudioSource, _portalSwapAudioSource;
+
+        [SerializeField]
+        private AudioClip _portalHumSound, _portalSwapSound;
+
         private void Start()
         {
+            _portalHumAudioSource = this.gameObject.AddComponent<AudioSource>();
+            _portalHumAudioSource.clip = _portalHumSound;
+            _portalHumAudioSource.loop = true;
+            _portalSwapAudioSource = this.gameObject.AddComponent<AudioSource>();
+            _portalSwapAudioSource.clip = _portalSwapSound;
+            _portalHumAudioSource.loop = false;
+
             portalCheck();
         }
 
@@ -58,6 +70,11 @@ namespace GGJ
 
             if (CheckIfHasLevelItems())
             {
+                if (!_portalHumAudioSource.isPlaying)
+                {
+                    _portalHumAudioSource.Play();
+                }
+
                 GetComponent<Animator>().SetBool("OpenPortal", true);
             }
         }

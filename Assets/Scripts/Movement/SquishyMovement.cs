@@ -15,6 +15,11 @@ namespace GGJ.Movement
 
         [SerializeField]
         private Transform _rightTarget;
+        
+        private AudioSource _audioSource;
+
+        [SerializeField]
+        private AudioClip _attackSound, _deathSound, _walkSound;
 
         private SquishController _controller;
 
@@ -30,6 +35,8 @@ namespace GGJ.Movement
             {
                 controller.Stop();
                 GetComponent<Animator>().SetTrigger("Death");
+                _audioSource.clip = _deathSound;
+                _audioSource.Play();
                 this.tag = "Dead";
                 Destroy(gameObject, 1);
             };
@@ -40,6 +47,9 @@ namespace GGJ.Movement
             _controller.SetLeftTarget(_leftTarget.position.x);
             _controller.SetRightTarget(_rightTarget.position.x);
             _controller.SetCurrentPos(transform);
+            _audioSource = this.gameObject.AddComponent<AudioSource>();
         }
+
+
     }
 }

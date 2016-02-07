@@ -4138,7 +4138,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400628, guid: 7e9425f5cb5dbc94c95c4e6fb8bb09f6, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 133292, guid: 7e9425f5cb5dbc94c95c4e6fb8bb09f6, type: 2}
       propertyPath: m_Name
@@ -4307,10 +4307,10 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1667364273}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 909db70a5c818a8469cad760f848596b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1033cc5d9bc57a04ba8e9cfb0927df6d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.68
   m_Pitch: 1
@@ -4412,7 +4412,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400628, guid: 7e9425f5cb5dbc94c95c4e6fb8bb09f6, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 133292, guid: 7e9425f5cb5dbc94c95c4e6fb8bb09f6, type: 2}
       propertyPath: m_Name
@@ -4923,7 +4923,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 12
 --- !u!1001 &1973987170
 Prefab:
   m_ObjectHideFlags: 0

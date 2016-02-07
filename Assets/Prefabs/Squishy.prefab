@@ -261,9 +261,11 @@ MonoBehaviour:
   _jumpStartSound: {fileID: 0}
   _playerLightAttackSound: {fileID: 0}
   _playerLightWalkSound: {fileID: 0}
-  _timeGainedOnDeath: 10
   _leftTarget: {fileID: 487582}
   _rightTarget: {fileID: 450702}
+  _attackSound: {fileID: 8300000, guid: 629e96ab4a49b9c46869e78ae89eaf77, type: 3}
+  _deathSound: {fileID: 8300000, guid: 7f90c0b333093a846b822eae8f12b159, type: 3}
+  _walkSound: {fileID: 8300000, guid: 896f8248ee5d5994e8ec123ab924cb0f, type: 3}
 --- !u!212 &21266890
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -300,7 +302,27 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _attackSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 629e96ab4a49b9c46869e78ae89eaf77, type: 3}
+    - target: {fileID: 0}
+      propertyPath: _deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7f90c0b333093a846b822eae8f12b159, type: 3}
+    - target: {fileID: 0}
+      propertyPath: _walkSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 896f8248ee5d5994e8ec123ab924cb0f, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 133292}
