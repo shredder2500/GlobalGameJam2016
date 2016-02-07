@@ -1,0 +1,18 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:88249628ca613ae9eb6b742d1e42eae2:c24c60fe73b1c09df30d25b4e22e0a37:c9b70c7acfe481c642cd9470e11a0399$
+#
+:format=40000
+:texture=MenuElements.png
+:size=2048x4096
+
+game back button 01;653;1284;720;332;0.5;0.5
+game credits 01 copy;1;3015;1920;1080;0.5;0.5
+game play button 01;653;1618;720;335;0.5;0.5
+game studio 02;1;2289;1920;724;0.5;0.5
+game title 01;1;1955;1920;332;0.5;0.5
+madeInStL;1;1264;650;689;0.5;0.5

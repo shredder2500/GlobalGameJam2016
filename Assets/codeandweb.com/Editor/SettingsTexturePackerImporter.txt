@@ -14,6 +14,7 @@ tpsheetFileNames:
 - Assets/Sprites/Sheets/Characters/Nona_Dark.tpsheet
 - Assets/Sprites/Sheets/Characters/FoxBat.tpsheet
 - Assets/Sprites/Sheets/Characters/Flying_Octopus.tpsheet
+- Assets/Sprites/Sheets/MenuElements.tpsheet
 textureFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.png
 - Assets/Sprites/Sheets/Characters/Nona_Light.png
@@ -28,8 +29,10 @@ textureFileNames:
 - Assets/Sprites/Sheets/Characters/Nona_Dark.png
 - Assets/Sprites/Sheets/Characters/FoxBat.png
 - Assets/Sprites/Sheets/Characters/Flying_Octopus.png
+- Assets/Sprites/Sheets/MenuElements.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
 - 
 - 
 - 

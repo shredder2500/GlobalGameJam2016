@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Linq;
+using UnityEngine.Events;
 
 namespace GGJ
 {
     public class Portal : MonoBehaviour
     {
+        [SerializeField]
+        private string _endingScene;
+
         private void Start()
         {
             portalCheck();
@@ -24,7 +28,14 @@ namespace GGJ
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                FindObjectOfType<SceneToggle>().ToggleScenes();
+                if (Ritual.HasAllItems)
+                {
+                    SceneManager.LoadScene(_endingScene);
+                }
+                else
+                {
+                    FindObjectOfType<SceneToggle>().ToggleScenes();
+                }
             }
         }
 
@@ -38,6 +49,7 @@ namespace GGJ
 
         private void portalCheck()
         {
+            
             foreach(var inventoryItem in FindObjectsOfType<InventoryItem>()
                 .Where(item => Inventory.GetLocationByID(item.ID) == InventoryItem.LocationEnum.InInventory))
             {
