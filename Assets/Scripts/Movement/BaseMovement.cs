@@ -132,7 +132,10 @@ namespace GGJ.Movement
             {
                 _canJump = false;
                 _animator.SetBool("Jump", true);
-                StartCoroutine(StartJump());
+                //StartCoroutine(StartJump());
+                _playerAudio.PlayOneShot(_jumpStartSound);
+                _rigidbody.AddForce(Vector2.up * _jumpForce);
+                StartCoroutine(CheckJumpFinished());
             }
         }
 
